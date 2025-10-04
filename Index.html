@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Meditation Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #ff5500;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            color: #cccccc;
+        }
+
+        .playlist-buttons {
+            margin: 1rem 0;
+        }
+
+        button {
+            background: #ff5500;
+            border: none;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            margin: 0.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+            button:hover {
+                background: #e14a00;
+            }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1> Mystic Radio </h1>
+
+    <!-- SoundCloud Player -->
+    <iframe id="sc-player"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/mysticmeditationrecords/sets/mystic-meditation-records&color=%23ff5500&auto_play=false">
+    </iframe>
+
+    <script>
+        function loadPlaylist(url) {
+            const player = document.getElementById('sc-player');
+            const encoded = encodeURIComponent(url);
+            player.src = `https://w.soundcloud.com/player/?url=${encoded}&color=%23ff5500&auto_play=false`;
+        }
+    </script>
+
+    <div>    <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/mystic-meditation-records')">Play All</button></div>
+
+    <!-- Artist Playlists -->
+    <h2>By Artist</h2>
+    <div class="playlist-buttons">
+     
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/bilal-reggae-playlist')">Bilal Reggae</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/ali-uthman-mystic-meditation')">Ali Uthman</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/sultan-osmanli-playlist')">Sultan Osmanli</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/john-wadud-playlist')">John Wadud</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/khalifa-abdul-hamid-playlist')"> Khalifa Abdul Hamid</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/saleh-akbar-playlist')">Saleh Akbar</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/muhammad-ali-khan-playlist')">Muhammad Ali Khan</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/salman-aziz-playlist')">Salman Aziz </button>
+
+    <!-- Genre Playlists -->
+    <h2>By Genre</h2>
+    <div class="playlist-buttons">
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/world-genre-playlist')">World</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/hip-hop-genre-playlist')">Hip Hop</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/r-b-soul-genre-playlist')">RnB/Soul</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/reggae-genre-playlist')">Raggae</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/pop-genre-playlist')">Pop</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/country-pop-genre-playlist')">Country Pop</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/country-genre-playlist')">Country</button>
+        <button onclick="loadPlaylist('https://soundcloud.com/mysticmeditationrecords/sets/latin-genre-playlist')">Latin</button>
+
+    </div>
+</body>
+</html>
